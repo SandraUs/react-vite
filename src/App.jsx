@@ -1,15 +1,16 @@
+import { createElement } from 'react';
 import ReactLogo from './assets/react.svg?react';
 
 export const App = () => {
-	const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
-	return (
-		<div>
-			<h1>Hello</h1>
-			<ReactLogo />
-			 {/* Декларативный стиль(что должно быть показано) */}
-			<p>{currentYear}</p>
-		</div>
-	);
+  return createElement(
+    'div',
+    null,
+    createElement('h1', null, 'Hello'),
+    createElement(ReactLogo, null),
+    // Декларативный стиль
+    createElement('p', null, `${currentYear}`)
+    // Императивного стиля здесь пока нет
+  );
 };
-{/*Императивный стиль тут отсутствует*/}
